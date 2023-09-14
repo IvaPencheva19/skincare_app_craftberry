@@ -27,6 +27,9 @@ code {
   font-style: normal;
 }
 
-/* body {
+body {
   font-family: "Proxima";
-} */
+} 
+h1,h2,h3{
+  font-family: 'Grange';
+}

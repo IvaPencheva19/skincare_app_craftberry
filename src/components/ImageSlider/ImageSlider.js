@@ -25,17 +25,17 @@ const ImageSlider = ({ products }) => {
     });
   };
   return (
-    <div className="sliderStyles">
+    <div className="slider">
       <div>
-        <div onClick={prevSlide} className="leftArrowStyles">
+        <div onClick={prevSlide} className="slider__left-arrow">
           {"<"}
         </div>
-        <div onClick={nextSlide} className="rightArrowStyles">
+        <div onClick={nextSlide} className="slider__right-arrow">
           {">"}
         </div>
       </div>
-      <div className="slideStyles">
-        <div className="product-cards">
+      <div className="slider__slide">
+        <div className="slider__product-cards">
           {products
             // .slice(currentIndex, currentIndex + 2)
             .map((product, index) => {
@@ -62,11 +62,11 @@ const ImageSlider = ({ products }) => {
             })}
         </div>
       </div>
-      <div className="dotsContainerStyles">
+      <div className="slider__dots-container">
         {Array.from({ length: Math.ceil(products.length / 2) }).map(
           (_, index) => (
             <div
-              className={`dotStyle ${
+              className={`slider__dot ${
                 currentIndex === index * 2 ? "active" : ""
               }`}
               key={index}

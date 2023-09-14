@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import QuestionContainer from "../../components/QuestionContainer/QuestionContainer";
 import { useParams } from "react-router-dom";
-import { AnswersContext } from "../../context/AnswersContext";
-import { useContext } from "react";
 const Quiz = () => {
-  const { answers, updateAnswers } = useContext(AnswersContext);
+  const [answers, setAnswers] = useState({});
 
   const questions = [
     {
@@ -40,11 +38,10 @@ const Quiz = () => {
       question: "What is your natural hair color(s) today?",
       answers: ["Black", "Brown", "Blonde", "Red/Orange", "Silver/Grey"],
     },
-    // Add more questions here
   ];
 
   const handleAnswerSelection = (questionIndex, answer) => {
-    updateAnswers({ ...answers, [questionIndex]: answer });
+    setAnswers({ ...answers, [questionIndex]: answer });
     localStorage.setItem("answers", JSON.stringify(answers));
   };
 
@@ -52,6 +49,7 @@ const Quiz = () => {
   const back = parseInt(questionIndex) - 1;
   const linkToBack = questionIndex > 0 ? `/quiz/${back}` : "/";
   const next = parseInt(questionIndex) + 1;
+
   let linkToNext = `/quiz/${questionIndex}`;
   if (!answers[questionIndex]) {
     linkToNext = `/quiz/${questionIndex}`;

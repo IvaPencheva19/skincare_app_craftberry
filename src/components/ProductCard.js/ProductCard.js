@@ -4,21 +4,22 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useEffect, useState } from "react";
 const ProductCard = ({ imgSrc, title, price }) => {
   const [isFavourite, setIsFavourite] = useState(false);
+
   useEffect(() => {
-    const existingArrayFavouritesJSON = localStorage.getItem("favourites");
-    if (existingArrayFavouritesJSON) {
-      const existingArrayFavourites = JSON.parse(existingArrayFavouritesJSON);
-      if (existingArrayFavourites.includes(title)) {
-        setIsFavourite(true);
-      }
+    const existingArrayFavourites = JSON.parse(
+      localStorage.getItem("favourites")
+    );
+    if (existingArrayFavourites.includes(title)) {
+      setIsFavourite(true);
     }
   }, []);
+
   const addToFavourites = () => {
     setIsFavourite((prev) => !prev);
-    const existingArrayFavouritesJSON = localStorage.getItem("favourites");
-    const existingArrayFavourites = existingArrayFavouritesJSON
-      ? JSON.parse(existingArrayFavouritesJSON)
-      : [];
+
+    const existingArrayFavourites = JSON.parse(
+      localStorage.getItem("favourites")
+    );
 
     if (!isFavourite) {
       existingArrayFavourites.push(title);

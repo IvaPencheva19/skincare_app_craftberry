@@ -1,9 +1,7 @@
-// import "./home.css";
 import { Link } from "react-router-dom";
 import "./results.css";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
-import { AnswersContext } from "../../context/AnswersContext";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 const url = "https://jeval.com.au/collections/hair-care/products.json";
 
@@ -12,20 +10,24 @@ function isObjectEqual(obj1, obj2) {
 }
 
 const Results = () => {
-  const { answers, updateAnswers } = useContext(AnswersContext);
+  const [answers, setAnswers] = useState({});
+
   const [products, setProducts] = useState([]);
   const [matchingProducts, setMatchingProducts] = useState([]);
   const [favourites, setFavourites] = useState([]);
-  console.log(answers);
+
   useEffect(() => {
     const storedAnswers = localStorage.getItem("answers");
     if (storedAnswers) {
       const parsedAnswers = JSON.parse(storedAnswers);
-      updateAnswers(parsedAnswers);
+      setAnswers(parsedAnswers);
     }
     const existingArrayFavourites = JSON.parse(
       localStorage.getItem("favourites")
     );
+    if (!existingArrayFavourites) {
+      localStorage.setItem("favourites", JSON.stringify([]));
+    }
     setFavourites(existingArrayFavourites);
   }, []);
 

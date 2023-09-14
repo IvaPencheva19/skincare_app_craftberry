@@ -1,6 +1,6 @@
 import "./questionContainer.css";
 import EastIcon from "@mui/icons-material/East";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -38,13 +38,17 @@ const QuestionContainer = ({
       <div className="question-container">
         <div className="question-container__question">
           <div className="question-container__header">
-            <h1>{question}</h1>
-            <div className="question-container__progress">
-              <CircularProgressbar
-                value={questionIndex + 1}
-                maxValue={questionsCount}
-                text={questionIndex + 1 + "/" + questionsCount}
-              />
+            <div className="header-left">
+              <h1>{question}</h1>
+            </div>
+            <div className="header-right">
+              <div className="question-container__progress">
+                <CircularProgressbar
+                  value={questionIndex + 1}
+                  maxValue={questionsCount}
+                  text={questionIndex + 1 + "/" + questionsCount}
+                />
+              </div>
             </div>
           </div>
           <div className="question-container__answers">
