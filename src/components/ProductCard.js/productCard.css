@@ -1,0 +1,29 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    max-width: 20rem;
+    max-height: 20rem;
+    position: relative;
+}
+
+.product-card img {
+    background-color: white;
+    max-height: 15rem;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.product-card p,
+.product-card h3 {
+    color: #1C2635;
+}
+
+.product-card__icon {
+    position: absolute;
+   cursor: pointer;
+    margin-left: 12rem;
+    color: #1C2635;
+    padding: 5px;
+ 
+}

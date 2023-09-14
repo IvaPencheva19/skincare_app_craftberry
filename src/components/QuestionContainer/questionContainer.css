@@ -1,0 +1,113 @@
+.question {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
+.question-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+ .question-container__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap-reverse;
+    line-height: 44px;
+   
+ }
+.question-container__header h2{
+    font-family: 'Grange';
+    color:#1C2635;
+    flex: 1;
+}
+.question-container__progress {
+    width: 5rem;
+    margin: auto;
+}
+.CircularProgressbar-path {
+    stroke: #AADDF3 !important;
+
+}
+
+.CircularProgressbar-text {
+    fill: #1C2635 !important;
+}
+
+.CircularProgressbar-trail {
+    stroke: #EEF7FB !important;
+}
+
+ .question-container__answers {
+     display: flex;
+     gap: 1rem;
+     flex-wrap: wrap;
+     justify-content: center;
+     margin-top: 1rem;
+     margin-bottom: 1.5rem;
+     max-width: 50rem;
+ }
+.question-container__answer {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 2rem;
+    border: 2px solid #C3EDFF;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 0 20px 0 10px;
+}
+.question-container__answer-selected {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 2rem;
+    border: 2px solid #C3EDFF;
+    border-radius: 8px;
+    background-color: #e6f7ff;
+    padding: 0 20px 0 10px;
+}
+
+.question-container__answer:hover,.question-container__answer-selected:hover {
+    cursor: pointer;
+    background-color: #e6f7ff;
+}
+
+.question-container__navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    align-items: baseline;
+}
+.question-container__back{
+    text-decoration: underline;
+    color: #677487;
+}
+.question-container__back:hover {
+    cursor: pointer;
+}
+
+
+.question-container__next-button {
+    width: 9rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #C3EDFF;
+    margin-top: 1rem;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;  
+    gap:3px;
+}
+
+.question-container__next-button:hover {
+    cursor: pointer;
+    background-color: #b3e8ff;
+}
+

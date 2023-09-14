@@ -1,0 +1,84 @@
+.product-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sliderStyles {
+    position: relative;
+    height: 100%;
+
+    
+}
+
+
+.leftArrowStyles {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: #1C2635;
+    z-index: 1;
+    cursor: pointer;
+    background-color: #EEF7FB;
+    border-radius: 40px;
+    width: 4rem;
+    padding-bottom: 10px;
+}
+
+.rightArrowStyles {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+    color: #1C2635;
+    z-index: 1;
+    cursor: pointer;
+    background-color: #EEF7FB;
+    border-radius: 40px;
+    width: 4rem;
+    padding-bottom: 10px;
+}
+.leftArrowStyles:hover,.rightArrowStyles:hover{
+    background-color: #d6ecf5;
+}
+
+.slideStyles {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.dotsContainerStyles{
+    display: flex;
+    justify-content: center;
+}
+
+
+.dotStyle {
+    margin: 0px 3px 20px 3px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #E3E3E3;
+  
+}
+
+.dotStyle.active {
+    
+    color: #5BC1ED;
+}
+
+.slide {
+    opacity: 0; 
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}

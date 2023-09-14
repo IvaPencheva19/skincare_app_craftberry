@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Grange';
+  src: url('./Grange.ttf') format('ttf'),
+    url('./Grange.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('./ProximaNovaFont.otf') format('otf'),
+    url('./ProximaNovaFont.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+  font-family: "Proxima";
+} */
