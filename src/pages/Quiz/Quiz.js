@@ -55,7 +55,6 @@ const Quiz = () => {
     linkToNext = `/quiz/${questionIndex}`;
   } else if (questionIndex < questions.length - 1) linkToNext = `/quiz/${next}`;
   else {
-    console.log("here");
     linkToNext = `/quiz/results`;
   }
   return (

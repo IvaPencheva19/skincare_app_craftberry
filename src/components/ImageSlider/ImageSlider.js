@@ -24,6 +24,19 @@ const ImageSlider = ({ products }) => {
         : newIndex;
     });
   };
+
+  const dots = Array.from({ length: Math.ceil(products.length / 2) }).map(
+    (_, index) => (
+      <div
+        className={`slider__dot ${currentIndex === index * 2 ? "active" : ""}`}
+        key={index}
+        onClick={() => goToSlide(index * 2)}
+      >
+        ●
+      </div>
+    )
+  );
+
   return (
     <div className="slider">
       <div>
@@ -62,21 +75,7 @@ const ImageSlider = ({ products }) => {
             })}
         </div>
       </div>
-      <div className="slider__dots-container">
-        {Array.from({ length: Math.ceil(products.length / 2) }).map(
-          (_, index) => (
-            <div
-              className={`slider__dot ${
-                currentIndex === index * 2 ? "active" : ""
-              }`}
-              key={index}
-              onClick={() => goToSlide(index * 2)}
-            >
-              ●
-            </div>
-          )
-        )}
-      </div>
+      <div className="slider__dots-container">{dots}</div>
     </div>
   );
 };

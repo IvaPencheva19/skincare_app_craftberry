@@ -1,9 +1,6 @@
-
 .slider {
     position: relative;
     height: 100%;
-
-    
 }
 
 
@@ -19,7 +16,8 @@
     background-color: #EEF7FB;
     border-radius: 40px;
     width: 4rem;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .slider__right-arrow {
@@ -34,7 +32,8 @@
     background-color: #EEF7FB;
     border-radius: 40px;
     width: 4rem;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .slider__left-arrow:hover,.slider__right-arrow:hover{
     background-color: #d6ecf5;
@@ -69,7 +68,6 @@
 }
 
 .slider__dot.active {
-    
     color: #5BC1ED;
 }
 
