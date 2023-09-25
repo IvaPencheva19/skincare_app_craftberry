@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "./results.css";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { useEffect, useState } from "react";
-import axios from "axios";
-const url = "https://jeval.com.au/collections/hair-care/products.json";
+import { useApi } from "../../context/APIContext";
 
 function isObjectEqual(obj1, obj2) {
   return obj1.title === obj2.title;
@@ -11,8 +10,7 @@ function isObjectEqual(obj1, obj2) {
 
 const Results = () => {
   const [answers, setAnswers] = useState({});
-
-  const [products, setProducts] = useState([]);
+  const { products } = useApi();
   const [matchingProducts, setMatchingProducts] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
@@ -29,17 +27,6 @@ const Results = () => {
       localStorage.setItem("favourites", JSON.stringify([]));
     }
     setFavourites(existingArrayFavourites);
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setProducts(response.data.products);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   }, []);
 
   useEffect(() => {

@@ -37,6 +37,7 @@ const ProductCard = ({ imgSrc, title, price }) => {
         );
       }
     }
+    console.log(existingArrayFavourites);
   };
 
   return (
