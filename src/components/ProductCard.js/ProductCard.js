@@ -2,42 +2,33 @@ import "./productCard.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useEffect, useState } from "react";
+import { useApi } from "../../context/APIContext";
+
 const ProductCard = ({ imgSrc, title, price }) => {
   const [isFavourite, setIsFavourite] = useState(false);
+  const { favourites, updateFavourites } = useApi();
 
   useEffect(() => {
-    const existingArrayFavourites = JSON.parse(
-      localStorage.getItem("favourites")
-    );
-    if (existingArrayFavourites.includes(title)) {
+    if (favourites.includes(title)) {
       setIsFavourite(true);
     }
-  }, []);
+  }, [favourites]);
 
   const addToFavourites = () => {
     setIsFavourite((prev) => !prev);
 
-    const existingArrayFavourites = JSON.parse(
-      localStorage.getItem("favourites")
-    );
+    const existingArrayFavourites = favourites;
 
     if (!isFavourite) {
       existingArrayFavourites.push(title);
-      localStorage.setItem(
-        "favourites",
-        JSON.stringify(existingArrayFavourites)
-      );
+      updateFavourites(existingArrayFavourites);
     } else {
       const indexToRemove = existingArrayFavourites.indexOf(title);
       if (indexToRemove !== -1) {
         existingArrayFavourites.splice(indexToRemove, 1);
-        localStorage.setItem(
-          "favourites",
-          JSON.stringify(existingArrayFavourites)
-        );
+        updateFavourites(existingArrayFavourites);
       }
     }
-    console.log(existingArrayFavourites);
   };
 
   return (

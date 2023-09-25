@@ -10,9 +10,8 @@ function isObjectEqual(obj1, obj2) {
 
 const Results = () => {
   const [answers, setAnswers] = useState({});
-  const { products } = useApi();
+  const { products, favourites } = useApi();
   const [matchingProducts, setMatchingProducts] = useState([]);
-  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     const storedAnswers = localStorage.getItem("answers");
@@ -20,13 +19,6 @@ const Results = () => {
       const parsedAnswers = JSON.parse(storedAnswers);
       setAnswers(parsedAnswers);
     }
-    const existingArrayFavourites = JSON.parse(
-      localStorage.getItem("favourites")
-    );
-    if (!existingArrayFavourites) {
-      localStorage.setItem("favourites", JSON.stringify([]));
-    }
-    setFavourites(existingArrayFavourites);
   }, []);
 
   useEffect(() => {
@@ -70,7 +62,7 @@ const Results = () => {
       );
     });
     setMatchingProducts(matchArr);
-  }, [products, favourites]);
+  }, [answers, products, favourites]);
 
   return (
     <div className="results">

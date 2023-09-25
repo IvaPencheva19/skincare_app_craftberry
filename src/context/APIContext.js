@@ -4,11 +4,11 @@ import axios from "axios";
 const ApiContext = createContext();
 
 const ApiProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
   const url = "https://jeval.com.au/collections/hair-care/products.json";
+  const [products, setProducts] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
-    console.log("hereeeee");
     axios
       .get(url)
       .then((response) => {
@@ -19,8 +19,25 @@ const ApiProvider = ({ children }) => {
       });
   }, []);
 
+  useEffect(() => {
+    const existingArrayFavourites = JSON.parse(
+      localStorage.getItem("favourites")
+    );
+    if (!existingArrayFavourites) {
+      localStorage.setItem("favourites", JSON.stringify([]));
+    }
+    setFavourites(existingArrayFavourites);
+  }, []);
+
+  const updateFavourites = (existingArrayFavourites) => {
+    localStorage.setItem("favourites", JSON.stringify(existingArrayFavourites));
+    setFavourites(existingArrayFavourites);
+  };
+
   const apiContextValue = {
     products,
+    favourites,
+    updateFavourites,
   };
 
   return (
