@@ -81,3 +81,25 @@
     transition-duration: 1s;
     transform: scale(1.08);
 }
+
+@media (max-width: 768px) {
+  
+
+    .slider__left-arrow {
+        left: 0px;
+        width: auto;
+        border-radius: 0px;
+        padding: 0 10px;
+        font-size: 40px;
+        border-radius: 50px;
+    }
+
+    .slider__right-arrow {
+        right: 0px;
+        width: auto;
+        border-radius: 0px;
+        padding: 0 10px;
+        font-size: 40px;
+        border-radius: 50px;
+    }
+}

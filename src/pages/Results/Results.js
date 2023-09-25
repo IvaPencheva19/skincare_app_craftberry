@@ -91,21 +91,23 @@ const Results = () => {
         <img src="/results_image.png"></img>
       </div>
       <div className="results-content">
-        <h1>Build you everyday self care routine. </h1>
-        <p>
-          Perfect for if you're looking for soft, nourished skin, our
-          moisturizing body washes are made with skin-natural nutrients that
-          work with your skin to replenish moisture. With a light formula, the
-          bubbly lather leaves your skin feeling cleansed and cared for. And by
-          choosing relaxing fragrances you can add a moment of calm to the end
-          of your day.
-        </p>
+        <div className="results-content__header">
+          <h1>Build you everyday self care routine. </h1>
+          <p>
+            Perfect for if you're looking for soft, nourished skin, our
+            moisturizing body washes are made with skin-natural nutrients that
+            work with your skin to replenish moisture. With a light formula, the
+            bubbly lather leaves your skin feeling cleansed and cared for. And
+            by choosing relaxing fragrances you can add a moment of calm to the
+            end of your day.
+          </p>
 
-        <Link to="/quiz/0">
-          <button className="results-content__retake-button">
-            Retake the quiz
-          </button>
-        </Link>
+          <Link to="/quiz/0">
+            <button className="results-content__retake-button">
+              Retake the quiz
+            </button>
+          </Link>
+        </div>
         <div className="results-content__recommendations">
           <div className="results-content__recommendations-info">
             <h3>Daily routine</h3>

@@ -67,3 +67,9 @@
     cursor: pointer;
     background-color: #b3e8ff;
 }
+
+@media (max-width: 768px) {
+.home-content h1{
+    width:16rem;
+}
+}

@@ -36,23 +36,24 @@
     color: #fff;
 }
 
-.results-content h1 {
-
-    width: 30rem;
+.results-content__header{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 30rem 2rem 30rem;
+}
+.results-content__header h1{
     line-height: 44px;
     font-size: 40px;
     font-family: 'Grange';
     letter-spacing: 1px;
     font-weight: 600;
-
 }
-
-.results-content p {
+.results-content__header p {
     margin-top: 0;
-    width: 30rem;
     line-height: 24px;
     font-size: 16px;
 }
+
 
 .results-content__retake-button {
     width: 14rem;
@@ -87,4 +88,13 @@
 }
 .results-content__recommendations-slider{
  flex: 4;
+}
+
+@media (max-width: 768px) {  
+    .results-content__recommendations{
+        padding: 0rem;
+    }
+    .results-content__header{
+        padding: 1rem 2rem;
+    }
 }

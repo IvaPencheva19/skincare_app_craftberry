@@ -120,3 +120,15 @@
     background-color: #b3e8ff;
 }
 
+@media (max-width: 768px) {
+   .question{
+    padding: 10rem 2rem;
+    align-items: flex-start;
+   }
+   .question-container__header {
+    flex-direction: column;
+   }
+   .header-left{
+    order:2;
+   }
+}
