@@ -1,7 +1,8 @@
 import "./home.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="home">
       <div className="home-background">
@@ -14,9 +15,14 @@ const Home = () => {
           needs.
         </p>
 
-        <Link to="/quiz/0">
-          <button className="home-content__start-button">Start the quiz</button>
-        </Link>
+        <button
+          className="home-content__start-button"
+          onClick={() => {
+            navigate("/quiz/0");
+          }}
+        >
+          Start the quiz
+        </button>
       </div>
     </div>
   );

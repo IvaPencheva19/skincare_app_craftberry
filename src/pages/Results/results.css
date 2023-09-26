@@ -39,6 +39,7 @@
 .results-content__header{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 3rem 30rem 2rem 30rem;
 }
 .results-content__header h1{
@@ -89,6 +90,13 @@
 .results-content__recommendations-slider{
  flex: 4;
 }
+
+@media (max-width: 1600px) {
+.results-content__header {
+        padding: 3rem 10rem 2rem 10rem;
+    }
+}
+
 
 @media (max-width: 768px) {  
     .results-content__recommendations{

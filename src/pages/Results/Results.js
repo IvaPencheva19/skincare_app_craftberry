@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./results.css";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { useEffect, useState } from "react";
@@ -9,6 +9,7 @@ function isObjectEqual(obj1, obj2) {
 }
 
 const Results = () => {
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
   const { products, favourites } = useApi();
   const [matchingProducts, setMatchingProducts] = useState([]);
@@ -81,11 +82,14 @@ const Results = () => {
             end of your day.
           </p>
 
-          <Link to="/quiz/0">
-            <button className="results-content__retake-button">
-              Retake the quiz
-            </button>
-          </Link>
+          <button
+            className="results-content__retake-button"
+            onClick={() => {
+              navigate("/quiz/0");
+            }}
+          >
+            Retake the quiz
+          </button>
         </div>
         <div className="results-content__recommendations">
           <div className="results-content__recommendations-info">
