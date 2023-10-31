@@ -1,3 +1,5 @@
+This is app made with React. This is quiz app which collect client answers and on their basis find products which have matching title, tag or description (json from endpoint). For visualization of these products has been used pagination.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
